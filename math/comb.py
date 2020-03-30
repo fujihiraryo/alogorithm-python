@@ -1,16 +1,16 @@
 class Comb():
-    def __init__(self, n, p):
+    # あらかじめO(N)の前計算をしておいてn<=Nに対してnCrを高速に計算する
+    def __init__(self, N, p):
         # O(n)
         fct, inv = [1, 1], [1, 1]
         a, b = 1, 1
-        for i in range(2, n + 1):
+        for i in range(2, N + 1):
             a = (a * i) % p
             b = (b * pow(i, p - 2, p)) % p
             fct.append(a)
             inv.append(b)
         self.fct = fct
         self.inv = inv
-        self.n = n
         self.p = p
 
     def calc(self, n, r):
@@ -18,7 +18,7 @@ class Comb():
         if (r < 0 or n < r):
             return 0
         else:
-            return fct[n] * inv[r] * inv[n - r] % p
+            return fct[n] * inv[r] * inv[n - r] % self.p
 
 
 def comb(n, r, p):
