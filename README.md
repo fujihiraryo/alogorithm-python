@@ -6,9 +6,11 @@
 
 | コード                       | 説明         |
 | :--------------------------- | :----------- |
+| [geometry/circle.py](geometry/circle.py) | 円   |
 | [geometry/convex.py](geometry/convex.py) | 凸包   |
 | [geometry/distance.py](geometry/distance.py) | 点と線分の距離 |
 | [geometry/intersect.py](geometry/intersect.py) | 線分の交差判定 |
+| [geometry/triangle.py](geometry/triangle.py) | 三角形   |
 
 
 ### グラフ

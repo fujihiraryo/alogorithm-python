@@ -7,7 +7,7 @@ def counter_clock(a, b, p):
 
 
 def convex(P):
-    # 点のリストPに対して凸包をなす点のリストを求める
+    # 点群Pの凸包
     P.sort()
     n = len(P)
     U = []
