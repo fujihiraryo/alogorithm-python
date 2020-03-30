@@ -15,6 +15,6 @@ def ext_euclid(a, b):
 
 
 # テスト
-a = 100
-b = 99
+a = 17
+b = 33
 print(ext_euclid(a, b))
