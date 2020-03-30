@@ -13,7 +13,7 @@ class Comb():
         self.n = n
         self.p = p
 
-    def calc(self, r):
+    def calc(self, n, r):
         fct, inv = self.fct, self.inv
         if (r < 0 or n < r):
             return 0
@@ -34,5 +34,5 @@ n = 10**6
 p = 10**9 + 7
 cmb = Comb(n, p)
 r = 10**5
-print(cmb.calc(r))
+print(cmb.calc(n, r))
 print(comb(n, r, p))
