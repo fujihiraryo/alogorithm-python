@@ -2,12 +2,23 @@
 
 競プロ用 Python ライブラリ
 
+### 幾何
+
+| コード                       | 説明         |
+| :--------------------------- | :----------- |
+| [geometry/convex.py](geometry/convex.py) | 凸包   |
+| [geometry/distance.py](geometry/distance.py) | 点と線分の距離 |
+| [geometry/intersect.py](geometry/intersect.py) | 線分の交差判定 |
+
+
 ### グラフ
 
 | コード                       | 説明         |
 | :--------------------------- | :----------- |
 | [graph/bfs.py](graph/bfs.py) | 幅優先探索   |
 | [graph/dfs.py](graph/dfs.py) | 深さ優先探索 |
+| [graph/dijkstra.py](graph/dijkstra.py) |ダイクストラ法 |
+| [graph/warshall_floyd.py](graph/warshall_floyd.py) | ワーシャルフロイド法 |
 
 ### 数学
 
