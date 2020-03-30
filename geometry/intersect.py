@@ -8,7 +8,7 @@ def intersect(a, b, c, d):
     tb = (cx - dx) * (by - cy) + (cy - dy) * (cx - bx)
     tc = (ax - bx) * (cy - ay) + (ay - by) * (ax - cx)
     td = (ax - bx) * (dy - ay) + (ay - by) * (ax - dx)
-    return tc * td < 0 and ta * tb <= 0
+    return tc * td <= 0 and ta * tb <= 0
 
 
 # テスト
