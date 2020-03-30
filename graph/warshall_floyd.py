@@ -7,9 +7,9 @@ def warshall_floyd(G):
         d[i][i] = 0
         for j in G[i].keys():
             d[i][j] = G[i][j]
-    for i in range(n):
-        for j in range(n):
-            for k in range(n):
+    for k in range(n):
+        for i in range(n):
+            for j in range(n):
                 d[i][j] = min(d[i][j], d[i][k]+d[k][j])
     return d
 
