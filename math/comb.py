@@ -1,5 +1,4 @@
 class Comb():
-    # 同じnに対して何回もnCrをmod素数で計算するときに便利
     def __init__(self, n, p):
         # O(n)
         fct, inv = [1, 1], [1, 1]
