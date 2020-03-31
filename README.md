@@ -2,7 +2,7 @@
 
 競プロ用 Python ライブラリ
 
-### 幾何
+## 幾何
 
 | コード                       | 説明         |
 | :--------------------------- | :----------- |
@@ -12,8 +12,7 @@
 | [geometry/intersect.py](geometry/intersect.py) | 線分の交差判定 |
 | [geometry/triangle.py](geometry/triangle.py) | 三角形   |
 
-
-### グラフ
+## グラフ
 
 | コード                       | 説明         |
 | :--------------------------- | :----------- |
@@ -23,22 +22,23 @@
 | [graph/grid.py](graph/grid.py) |グリッドを隣接リストに変換 |
 | [graph/warshall_floyd.py](graph/warshall_floyd.py) | ワーシャルフロイド法 |
 
-### 数学
+## 整数
 
 | コード                                       | 説明                     |
-| :------------------------------------------- | :----------------------- |
-| [math/comb.py](math/comb.py)                 | mod 素数の二項係数       |
-| [math/ext_euclid.py](math/ext_euclid.py)     | 拡張ユークリッドの互除法 |
-| [math/factrization.py](math/factrization.py) | 素因数分解               |
-| [math/trisect.py](math/trisect.py)           | 三分探索                 |
+| :------------------------------------------ | :---------------------- |
+| [math/comb.py](math/comb.py)                 | mod 素数の二項係数 |
+| [math/euclid.py](math/euclid.py)     | ユークリッドの互除法 |
+| [math/factrization.py](math/factrization.py) | 素因数分解 |
 
-### 集合
+## 探索
 
 | コード                       | 説明   |
 | :--------------------------- | :----- |
-| [set/power.py](set/power.py) | 冪集合 |
+| [search/bisect.py](search/bisect.py)   | 二分探索  |
+| [search/bit.py](search/bit.py) | bit全探索 |
+| [search/trisect.py](search/trisect.py)   | 三分探索  |
 
-### データ構造
+## データ構造
 
 | コード                                             | 説明         |
 | :------------------------------------------------- | :----------- |

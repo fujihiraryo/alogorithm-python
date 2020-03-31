@@ -13,7 +13,6 @@ def trisect(f, eps=10**(-5)):
     return x, f(x)
 
 
-# テスト
 def f(x):
     return x + 1 / x
 
