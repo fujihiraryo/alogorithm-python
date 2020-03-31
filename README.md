@@ -26,8 +26,8 @@
 
 | コード                                       | 説明                     |
 | :------------------------------------------ | :---------------------- |
-| [integer/comb.py](integer/comb.py)                 | mod 素数の二項係数 |
-| [integer/euclid.py](integer/euclid.py)     | ユークリッドの互除法 |
+| [integer/comb.py](integer/comb.py) | 二項係数 |
+| [integer/euclid.py](integer/euclid.py)| ユークリッドの互除法 |
 | [integer/factrization.py](integer/factrization.py) | 素因数分解 |
 
 ## 探索
