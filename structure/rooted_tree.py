@@ -1,4 +1,4 @@
-class Tree():
+class RootedTree():
     def __init__(self, G, r):
         # グラフGと根rから、各ノードの親ノードを求める
         n = len(G)
@@ -17,7 +17,7 @@ class Tree():
 
 # テスト
 G = [[4], [4], [3], [2, 5], [0, 1, 5], [3, 4]]
-tree = Tree(G, 5)
+tree = RootedTree(G, 5)
 print(tree.P)
-tree = Tree(G, 1)
+tree = RootedTree(G, 1)
 print(tree.P)
