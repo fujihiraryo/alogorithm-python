@@ -1,15 +1,12 @@
-from collections import deque
-
-
 class Tree():
     def __init__(self, G, r):
         # グラフGと根rから、各ノードの親ノードを求める
         n = len(G)
         P = [None for i in range(n)]
         V = [False for i in range(n)]
-        que = deque([r])
+        que = [r]
         while que:
-            x = que.popleft()
+            x = que.pop()
             V[x] = True
             for y in G[x]:
                 if not V[y]:
