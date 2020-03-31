@@ -43,4 +43,5 @@
 | コード                                             | 説明         |
 | :------------------------------------------------- | :----------- |
 | [structure/segtree.py](structure/segtree.py)       | セグメント木 |
+| [structure/tree.py](structure/tree.py)       | 木 |
 | [structure/union_find.py](structure/union_find.py) | Union Find   |

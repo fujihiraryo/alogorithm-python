@@ -24,6 +24,7 @@ class SegmentTree():
         return len(self.subquery(l, r, 0, 0, 2**self.size))
 
     def update(self, i, c):
+        # 配列のi番目をcに更新する
         tmp = i + 2**self.size - 1
         self.array[tmp] = {c}
         while tmp > 0:
