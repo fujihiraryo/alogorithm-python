@@ -29,6 +29,7 @@
 | [integer/comb.py](integer/comb.py) | 二項係数 |
 | [integer/euclid.py](integer/euclid.py)| ユークリッドの互除法 |
 | [integer/factrization.py](integer/factrization.py) | 素因数分解 |
+| [integer/fft.py](integer/fft.py) | 整数環上のフーリエ変換 |
 
 ## 探索
 
