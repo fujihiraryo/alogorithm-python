@@ -1,14 +1,14 @@
 class UnionFind():
     def __init__(self, n):
         self.n = n
-        # 親の名(いない場合は自分)
-        self.parent = list(range(n))
+        # 親の名(いない場合はNone)
+        self.parent = [None]*n
         # 子の数
         self.count = [0] * n
 
     def root(self, x):
         # xの根を返す
-        if self.parent[x] == x:
+        if self.parent[x] == None:
             return x
         else:
             return self.root(self.parent[x])
@@ -30,3 +30,12 @@ class UnionFind():
 
     def same(self, x, y):
         return self.root(x) == self.root(y)
+
+
+# テスト
+uf = UnionFind(5)
+uf.union(0, 1)
+uf.union(0, 2)
+uf.union(3, 4)
+print(uf.same(1, 2))
+print(uf.same(1, 3))
