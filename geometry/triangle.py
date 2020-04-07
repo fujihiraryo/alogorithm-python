@@ -23,3 +23,5 @@ class Triangle():
         self.U = (Ux, Uy)
         # 重心の座標
         self.G = ((Ax+Bx+Cx)/3, (Ay+By+Cy)/3)
+        # 面積
+        self.S = abs((Bx-Ax)*(Cy-Ay)-(Cx-Ax)*(By-Ay))/2
