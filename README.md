@@ -39,6 +39,12 @@
 | [search/bit.py](search/bit.py) | bit全探索 |
 | [search/trisect.py](search/trisect.py)   | 三分探索  |
 
+## 文字列
+
+| コード                       | 説明   |
+| :--------------------------- | :----- |
+| [string/rolling_hash.py](string/rolling_hash.py)   | ローリングハッシュ法  |
+
 ## データ構造
 
 | コード                                             | 説明         |
