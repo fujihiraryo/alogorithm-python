@@ -43,7 +43,8 @@
 
 | コード                       | 説明   |
 | :--------------------------- | :----- |
-| [string/rolling_hash.py](string/rolling_hash.py)   | ローリングハッシュ法  |
+| [string/rolling_hash.py](string/rolling_hash.py)   | ローリングハッシュ  |
+| [string/z_algorithm.py](string/z_algorithm.py)   | Z-Algorithm  |
 
 ## データ構造
 
