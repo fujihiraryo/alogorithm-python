@@ -43,6 +43,7 @@
 
 | コード                       | 説明   |
 | :--------------------------- | :----- |
+| [string/lcs.py](string/lcs.py)   | 最長部分列 |
 | [string/rolling_hash.py](string/rolling_hash.py)   | ローリングハッシュ  |
 | [string/z_algorithm.py](string/z_algorithm.py)   | Z-Algorithm  |
 
