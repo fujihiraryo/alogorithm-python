@@ -28,6 +28,7 @@
 | コード                                       | 説明                     |
 | :------------------------------------------ | :---------------------- |
 | [integer/comb.py](integer/comb.py) | 二項係数 |
+| [integer/discrete_log.py](integer/discrete_log.py) | 離散対数 |
 | [integer/euclid.py](integer/euclid.py)| ユークリッドの互除法 |
 | [integer/factrization.py](integer/factrization.py) | 素因数分解 |
 | [integer/fft.py](integer/fft.py) | 剰余環上の高速フーリエ変換 |
