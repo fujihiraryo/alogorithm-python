@@ -1,10 +1,35 @@
-class Comb():
-    # あらかじめO(N)の前計算をしておいてn<=Nに対してnCrを高速に計算する
-    def __init__(self, N, p):
-        # O(n)
-        fct, inv = [1, 1], [1, 1]
+class Comb0():
+    # あらかじめO(k)の前計算をしておいてr<=kに対してnCrを高速に計算する
+    def __init__(self, n, k=10**6, p=10**9+7):
+        # num[i]=nPi
+        # den[i]=(i!)^(-1)
+        num, den = [1], [1]
         a, b = 1, 1
-        for i in range(2, N + 1):
+        for i in range(1, k+1):
+            a = (a*(n-i+1)) % p
+            b = (b*pow(i, p-2, p)) % p
+            num.append(a)
+            den.append(b)
+        self.num = num
+        self.den = den
+        self.n = n
+        self.p = p
+
+    def calc(self, r):
+        num, den = self.num, self.den
+        if r < 0 or self.n < r:
+            return 0
+        return (num[r] * den[r]) % self.p
+
+
+class Comb1():
+    # あらかじめO(m)の前計算をしておいてn<=mに対してnCrを高速に計算する
+    def __init__(self, m=10**6, p=10**9+7):
+        # fct[i]=i!
+        # inv[i]=(i!)^(-1)
+        fct, inv = [1], [1]
+        a, b = 1, 1
+        for i in range(1, m+1):
             a = (a * i) % p
             b = (b * pow(i, p - 2, p)) % p
             fct.append(a)
@@ -15,24 +40,16 @@ class Comb():
 
     def calc(self, n, r):
         fct, inv = self.fct, self.inv
-        if (r < 0 or n < r):
+        if r < 0 or n < r:
             return 0
-        else:
-            return fct[n] * inv[r] * inv[n - r] % self.p
+        return (fct[n] * inv[r] * inv[n - r]) % self.p
 
 
-def comb(n, r, p):
-    # O(r)で計算したい場合はこっち
-    x = 1
-    for i in range(1, r + 1):
-        x *= (n - i + 1) * pow(i, p - 2, p) % p
-    return x % p
+cmb = Comb0(10**9)
+print(cmb.calc(10**5))
 
+cmb = Comb0(6)
+print(cmb.calc(3))
 
-# テスト
-n = 10**6
-p = 10**9 + 7
-cmb = Comb(n, p)
-r = 10**5
-print(cmb.calc(n, r))
-print(comb(n, r, p))
+cmb = Comb1()
+print(cmb.calc(6, 3))
