@@ -5,19 +5,18 @@ def bfs(G, a, b):
     # グラフGにおいてaからbへの距離
     # 到達不可能な場合は-1を返す
     n = len(G)
-    d = [-1] * n
-    que = deque([a])
-    d[a] = 0
-    while que:
-        x = que.popleft()
+    D = [-1] * n
+    Q = deque([a])
+    D[a] = 0
+    while Q:
+        x = Q.popleft()
         if x == b:
-            return d[b]
-        next = G[x]
-        for y in next:
-            if d[y] == -1:
-                que.append(y)
-                d[y] = d[x] + 1
-    return d[b]
+            return D[b]
+        for y in G[x]:
+            if D[y] == -1:
+                Q.append(y)
+                D[y] = D[x] + 1
+    return D[b]
 
 
 # テスト
