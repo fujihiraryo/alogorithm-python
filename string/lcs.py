@@ -1,5 +1,5 @@
 def lcs(S, T):
-    # 最長部分列
+    # 最長共通部分列
     m, n = len(S), len(T)
     C = [[0 for j in range(n+1)] for i in range(m+1)]
     for i in range(m):
