@@ -1,13 +1,13 @@
 class Comb0():
     # あらかじめO(k)の前計算をしておいてr<=kに対してnCrを高速に計算する
-    def __init__(self, n, k=10**6, p=10**9+7):
+    def __init__(self, n, k=10**6, p=10**9 + 7):
         # num[i]=nPi
         # den[i]=(i!)^(-1)
         num, den = [1], [1]
         a, b = 1, 1
-        for i in range(1, k+1):
-            a = (a*(n-i+1)) % p
-            b = (b*pow(i, p-2, p)) % p
+        for i in range(1, k + 1):
+            a = (a * (n - i + 1)) % p
+            b = (b * pow(i, p - 2, p)) % p
             num.append(a)
             den.append(b)
         self.num = num
@@ -24,12 +24,12 @@ class Comb0():
 
 class Comb1():
     # あらかじめO(m)の前計算をしておいてn<=mに対してnCrを高速に計算する
-    def __init__(self, m=10**6, p=10**9+7):
+    def __init__(self, m=10**6, p=10**9 + 7):
         # fct[i]=i!
         # inv[i]=(i!)^(-1)
         fct, inv = [1], [1]
         a, b = 1, 1
-        for i in range(1, m+1):
+        for i in range(1, m + 1):
             a = (a * i) % p
             b = (b * pow(i, p - 2, p)) % p
             fct.append(a)
@@ -45,6 +45,16 @@ class Comb1():
         return (fct[n] * inv[r] * inv[n - r]) % self.p
 
 
+# パスカルの三角形(O(n))
+n = 101
+C = [[0 for j in range(n)] for i in range(n)]
+for i in range(n):
+    C[i][0] = 1
+for i in range(1, n):
+    for j in range(1, n):
+        C[i][j] = C[i - 1][j - 1] + C[i - 1][j]
+
+
 cmb = Comb0(10**9)
 print(cmb.calc(10**5))
 
@@ -53,3 +63,5 @@ print(cmb.calc(3))
 
 cmb = Comb1()
 print(cmb.calc(6, 3))
+
+print(C[100][50])
