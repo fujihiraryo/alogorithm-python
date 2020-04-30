@@ -2,13 +2,13 @@ class UnionFind():
     def __init__(self, n):
         self.n = n
         # 親の名(いない場合はNone)
-        self.parent = [None]*n
+        self.parent = [None] * n
         # 子の数
         self.count = [0] * n
 
     def root(self, x):
         # xの根を返す
-        if self.parent[x] == None:
+        if self.parent[x] is None:
             return x
         else:
             return self.root(self.parent[x])

@@ -8,4 +8,4 @@ class Circle():
         # 点qを含むか判定
         px, py = self.p
         qx, qy = q
-        return (px-qx)**2+(py-qy)**2 <= self.r**2
+        return (px - qx)**2 + (py - qy)**2 <= self.r**2

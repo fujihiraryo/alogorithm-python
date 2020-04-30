@@ -3,7 +3,7 @@ def counter_clock(a, b, p):
     ax, ay = a
     bx, by = b
     px, py = p
-    return (bx-ax)*(py-ay) > (by-ay)*(px-ax)
+    return (bx - ax) * (py - ay) > (by - ay) * (px - ax)
 
 
 def convex(P):
@@ -30,7 +30,7 @@ def convex(P):
             L.pop()
             a, b = L[-2], L[-1]
         L.append(p)
-    return list(set(U+L))
+    return list(set(U + L))
 
 
 # テスト

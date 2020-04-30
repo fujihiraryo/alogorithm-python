@@ -12,7 +12,7 @@ def dijkstra(G, r):
     while Q:
         _, x = heapq.heappop(Q)
         for y in G[x].keys():
-            if D[x]+G[x][y] < D[y]:
-                D[y] = D[x]+G[x][y]
+            if D[x] + G[x][y] < D[y]:
+                D[y] = D[x] + G[x][y]
                 heapq.heappush(Q, (D[y], y))
     return D

@@ -55,8 +55,6 @@
 
 | コード                                             | 説明         |
 | :------------------------------------------------- | :----------- |
-| [structure/deque.py](structure/deque.py)       | 両端キュー |
-| [structure/heap.py](structure/heap.py)       | ヒープ |
 | [structure/segtree.py](structure/segtree.py)       | セグメント木 |
 | [structure/rooted_tree.py](structure/rooted_tree.py)   | 根付き木 |
 | [structure/union_find.py](structure/union_find.py) | Union Find   |

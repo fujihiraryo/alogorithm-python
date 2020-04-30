@@ -30,7 +30,7 @@ def ext_euclid(a, b):
 
 # テスト
 A = [12]
-print(apply(A, gcd))
+print(A(*gcd))
 
 a = 17
 b = 33

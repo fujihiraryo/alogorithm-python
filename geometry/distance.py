@@ -2,7 +2,7 @@ def distancePP(a, b):
     # 点aと点bの距離
     ax, ay = a
     bx, by = b
-    return ((ax-bx)**2+(ay-by)**2)**0.5
+    return ((ax - bx)**2 + (ay - by)**2)**0.5
 
 
 def distanceLP(p, a, b):
@@ -10,7 +10,8 @@ def distanceLP(p, a, b):
     px, py = p
     ax, ay = a
     bx, by = b
-    return abs((ax-bx)*(ay-py)-(ax-px)*(ay-by))/distancePP(a, b)
+    c = (ax - bx) * (ay - py) - (ax - px) * (ay - by)
+    return abs(c / distancePP(a, b))
 
 
 def distanceSP(p, a, b):
@@ -18,9 +19,9 @@ def distanceSP(p, a, b):
     px, py = p
     ax, ay = a
     bx, by = b
-    if (ax-bx)*(ax-px)+(ay-by)*(ay-py) < 0:
+    if (ax - bx) * (ax - px) + (ay - by) * (ay - py) < 0:
         return distancePP(a, p)
-    elif (bx-ax)*(bx-px)+(by-ay)*(by-py) < 0:
+    elif (bx - ax) * (bx - px) + (by - ay) * (by - py) < 0:
         return distancePP(b, p)
     else:
         return distanceLP(p, a, b)

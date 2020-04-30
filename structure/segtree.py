@@ -8,15 +8,15 @@ class SegmentTree():
         for i in range(2**self.size - 1)[::-1]:
             self.array[i] = self.array[2 * i + 1] | self.array[2 * i + 2]
 
-    def subquery(self, l, r, k, i, j):
-        # 区間[i,j)の中で区間[l,r)の文字列の集合を返す
-        if j <= l or r <= i:
+    def subquery(self, a, b, k, i, j):
+        # 区間[i,j)の中で区間[a,b)の文字列の集合を返す
+        if j <= a or b <= i:
             return set()
-        elif l <= i and j <= r:
+        elif a <= i and j <= b:
             return self.array[k]
         else:
-            l_set = self.subquery(l, r, 2 * k + 1, i, (i + j) // 2)
-            r_set = self.subquery(l, r, 2 * k + 2, (i + j) // 2, j)
+            l_set = self.subquery(a, b, 2 * k + 1, i, (i + j) // 2)
+            r_set = self.subquery(a, b, 2 * k + 2, (i + j) // 2, j)
             return l_set | r_set
 
     def query(self, l, r):

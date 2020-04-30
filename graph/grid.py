@@ -14,17 +14,17 @@ def grid2graph(grid):
             if grid[h][w] == '#':
                 continue
             i = f[(h, w)]
-            if 0 <= h-1 and grid[h-1][w] == '.':
-                j = f[(h-1, w)]
+            if 0 <= h - 1 and grid[h - 1][w] == '.':
+                j = f[(h - 1, w)]
                 G[i].append(j)
-            if 0 <= w-1 and grid[h][w-1] == '.':
-                j = f[(h, w-1)]
+            if 0 <= w - 1 and grid[h][w - 1] == '.':
+                j = f[(h, w - 1)]
                 G[i].append(j)
-            if h+1 < H and grid[h+1][w] == '.':
-                j = f[(h+1, w)]
+            if h + 1 < H and grid[h + 1][w] == '.':
+                j = f[(h + 1, w)]
                 G[i].append(j)
-            if w+1 < W and grid[h][w+1] == '.':
-                j = f[(h, w+1)]
+            if w + 1 < W and grid[h][w + 1] == '.':
+                j = f[(h, w + 1)]
                 G[i].append(j)
     return G
 

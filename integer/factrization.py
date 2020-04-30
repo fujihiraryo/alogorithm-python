@@ -7,7 +7,7 @@ def factrize(x):
         cnt = 0
         while tmp % i == 0:
             cnt += 1
-            tmp = tmp//i
+            tmp = tmp // i
         if cnt > 0:
             f[i] = cnt
         i += 1
@@ -45,12 +45,12 @@ class Sieve():
         while f[tmp]:
             try:
                 g[f[tmp]] += 1
-            except:
+            except BaseException:
                 g[f[tmp]] = 1
             tmp = tmp // f[tmp]
         try:
             g[tmp] += 1
-        except:
+        except BaseException:
             g[tmp] = 1
         return g
 

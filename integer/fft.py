@@ -5,21 +5,21 @@ class FFT():
         self.n = n
         self.p = p
         self.w = w
-        self.rn = pow(n, p-2, p)
-        self.rw = pow(w, p-2, p)
+        self.rn = pow(n, p - 2, p)
+        self.rw = pow(w, p - 2, p)
 
     def base(self, A, n, w):
         if n == 1:
             return A
         p = self.p
-        for i in range(n-len(A)):
+        for i in range(n - len(A)):
             A.append(0)
-        F0 = self.base(A[0::2], n//2, pow(w, 2, p))
-        F1 = self.base(A[1::2], n//2, pow(w, 2, p))
+        F0 = self.base(A[0::2], n // 2, pow(w, 2, p))
+        F1 = self.base(A[1::2], n // 2, pow(w, 2, p))
         x = 1
         F = []
         for i in range(n):
-            f = (F0[i % (n//2)] + x * F1[i % (n//2)]) % p
+            f = (F0[i % (n // 2)] + x * F1[i % (n // 2)]) % p
             x = (x * w) % p
             F.append(f)
         return F
@@ -39,7 +39,7 @@ class FFT():
         nC = nA + nB - 1
         FA = self.fft(A)
         FB = self.fft(B)
-        FC = [FA[i]*FB[i] for i in range(self.n)]
+        FC = [FA[i] * FB[i] for i in range(self.n)]
         C = self.ift(FC)
         return C[:nC]
 

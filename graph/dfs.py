@@ -11,6 +11,6 @@ def dfs(G, V, a, b):
 
 # テスト
 G = [[3, 4], [2], [1], [0, 4], [0, 3]]
-V = [False]*len(G)
+V = [False] * len(G)
 print(dfs(G, V, 0, 4))
 print(dfs(G, V, 0, 1))
