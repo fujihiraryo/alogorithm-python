@@ -47,7 +47,7 @@
 | コード                       | 説明   |
 | :--------------------------- | :----- |
 | [string/edit_distance.py](string/edit_distance.py)   | 編集距離 |
-| [string/lcs.py](string/lcs.py)   | 最長部分列 |
+| [string/lcs.py](string/lcs.py)   | 最長共通部分列 |
 | [string/rolling_hash.py](string/rolling_hash.py)   | ローリングハッシュ  |
 | [string/z_algorithm.py](string/z_algorithm.py)   | Z-Algorithm  |
 
