@@ -40,6 +40,7 @@
 | :--------------------------- | :----- |
 | [search/bisect.py](search/bisect.py)   | 二分探索  |
 | [search/bit.py](search/bit.py) | bit全探索 |
+| [search/generator.py](search/generator.py) | ジェネレーター |
 | [search/trisect.py](search/trisect.py)   | 三分探索  |
 
 ## 文字列
