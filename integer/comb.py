@@ -45,6 +45,17 @@ class Comb1():
         return (fct[n] * inv[r] * inv[n - r]) % self.p
 
 
+def cmb(x, y, mod=10**9 + 7):
+    if x <= y:
+        return 0
+    tmp = 1
+    for i in range(y):
+        tmp *= x - i
+        tmp *= pow(y - i, mod - 2, mod)
+        tmp %= mod
+    return tmp
+
+
 # パスカルの三角形(O(n))
 n = 101
 C = [[0 for j in range(n)] for i in range(n)]
@@ -55,13 +66,12 @@ for i in range(1, n):
         C[i][j] = C[i - 1][j - 1] + C[i - 1][j]
 
 
-cmb = Comb0(10**9)
-print(cmb.calc(10**5))
+comb0 = Comb0(6)
+print(comb0.calc(3))
 
-cmb = Comb0(6)
-print(cmb.calc(3))
+comb1 = Comb1()
+print(comb1.calc(6, 3))
 
-cmb = Comb1()
-print(cmb.calc(6, 3))
+print(cmb(6, 3))
 
-print(C[100][50])
+print(C[6][3])
