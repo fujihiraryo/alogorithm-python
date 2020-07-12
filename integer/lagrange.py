@@ -1,24 +1,39 @@
+mod = 10**9 + 7
+
+
 class Lagrange:
     def __init__(self, lst):
         self.lst = lst
+        self.mod = mod
 
     def f(self, j, x):
         prd = 1
         for i, (xi, yi) in enumerate(self.lst):
             if j != i:
                 prd *= (x - xi)
+                prd %= self.mod
         return prd
 
     def P(self, x):
         tmp = 0
         for i, (xi, yi) in enumerate(self.lst):
-            tmp += yi * (self.f(i, x) // self.f(i, xi))
+            tmp += yi * (self.f(i, x) *
+                         pow(self.f(i, xi), self.mod - 2, self.mod))
+            tmp %= self.mod
         return tmp
 
 
 if __name__ == "__main__":
-    # P(x)=x**2-3*x+10
-    lst = [(0, 10), (1, 8), (2, 8), (3, 10)]
+    n = 5
+
+    def P(x):
+        tmp = 0
+        for i in range(n):
+            tmp += (i + 1) * x**(n - i)
+            tmp %= mod
+        return tmp
+
+    lst = [(x, P(x)) for x in range(n + 1)]
     lag = Lagrange(lst)
-    for i in range(10):
-        print(lag.P(i))
+    for x in range(n, 3 * n):
+        print(lag.P(x), P(x))

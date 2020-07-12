@@ -33,6 +33,7 @@
 | [integer/euclid.py](integer/euclid.py)| ユークリッドの互除法 |
 | [integer/factrization.py](integer/factrization.py) | 素因数分解 |
 | [integer/fft.py](integer/fft.py) | 剰余環上の高速フーリエ変換 |
+| [integer/lagrange.py](integer/lagrange.py) | 剰余環上の多項式のラグランジュ補間 |
 
 ## 探索
 
