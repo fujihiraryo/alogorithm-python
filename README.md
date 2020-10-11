@@ -34,6 +34,7 @@
 | [integer/factrization.py](integer/factrization.py) | 素因数分解 |
 | [integer/fft.py](integer/fft.py) | 剰余環上の高速フーリエ変換 |
 | [integer/lagrange.py](integer/lagrange.py) | 剰余環上の多項式のラグランジュ補間 |
+| [integer/mint.py](integer/mint.py) | 自動でmodをとる整数型 |
 | [integer/polynomial.py](integer/polynomial.py) | 剰余環上の多項式の積分 |
 
 ## 探索
