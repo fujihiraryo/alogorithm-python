@@ -1,15 +1,14 @@
-def top_sort(G, I):
-    # G:出力点リスト, I:入力次数リスト
+def top_sort(G, L):
     n = len(G)
-    S = [i for i in range(n) if I[i] == 0]
+    S = [i for i in range(n) if L[i] == 0]
     A = []
     while S:
         i = S.pop()
         A.append(i)
         while G[i]:
             j = G[i].pop()
-            I[j] -= 1
-            if I[j] == 0:
+            L[j] -= 1
+            if L[j] == 0:
                 S.append(j)
     return A
 
