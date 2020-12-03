@@ -22,14 +22,8 @@ def ext_euclid(a, b):
     x0, y0, r0 = 1, 0, a
     x1, y1, r1 = 0, 1, b
     while r0 != 0:
-        x0, y0, r0, x1, y1, r1 = (
-            x1 - x0 * (r1 // r0),
-            y1 - y0 * (r1 // r0),
-            r1 % r0,
-            x0,
-            y0,
-            r0,
-        )
+        x0, y0, r0 = x1 - x0 * (r1 // r0), y1 - y0 * (r1 // r0), r1 % r0
+        x1, y1, r1 = x0, y0, r0
     if a * x1 + b * y1 == 1:
         return x1, y1
 
