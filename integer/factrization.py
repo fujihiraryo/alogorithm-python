@@ -3,7 +3,7 @@ def factrize(x):
     f = {}
     tmp = x
     i = 2
-    while i**2 <= tmp:
+    while i ** 2 <= tmp:
         cnt = 0
         while tmp % i == 0:
             cnt += 1
@@ -16,14 +16,14 @@ def factrize(x):
     return f
 
 
-class Sieve():
+class Sieve:
     # エラトステネスの篩
     def __init__(self, n):
         # f[x]=0ならxは素数
         # f[x]はxの最小の素因数
         X = list(range(2, n + 1))
         f = {}
-        while X[0]**2 <= n:
+        while X[0] ** 2 <= n:
             tmp = X[0]
             f[tmp] = 0
             X_new = []
@@ -57,7 +57,7 @@ class Sieve():
 
 # テスト
 print(Sieve(100).primes)
-n = 10**5
+n = 10 ** 5
 sieve = Sieve(n)
 print(sieve.factrize(3664))
 print(factrize(3664))

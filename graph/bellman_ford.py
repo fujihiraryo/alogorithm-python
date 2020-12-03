@@ -5,7 +5,7 @@ def bellman_ford(G, r):
     for i in range(n):
         for j in G[i].keys():
             E.append((i, j, G[i][j]))
-    inf = 10**20
+    inf = 10 ** 20
     D = [inf for i in range(n)]
     D[r] = 0
     flag = True

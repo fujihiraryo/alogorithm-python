@@ -12,7 +12,7 @@ def bisect(f, left, right):
 
 
 def f(x):
-    return 2**x > 10000
+    return 2 ** x > 10000
 
 
 print(bisect(f, -100, 1000))

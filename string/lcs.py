@@ -9,7 +9,7 @@ def lcs(S, T):
             else:
                 C[i + 1][j + 1] = max(C[i][j + 1], C[i + 1][j])
     le = C[m][n]
-    X = ''
+    X = ""
     while le:
         if S[m - 1] == T[n - 1]:
             X = S[m - 1] + X
@@ -23,6 +23,6 @@ def lcs(S, T):
     return X
 
 
-S = 'abracadabra'
-T = 'avadakedavra'
+S = "abracadabra"
+T = "avadakedavra"
 print(lcs(S, T))

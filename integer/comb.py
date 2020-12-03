@@ -1,6 +1,6 @@
-class Comb0():
+class Comb0:
     # あらかじめO(k)の前計算をしておいてr<=kに対してnCrを高速に計算する
-    def __init__(self, n, k=10**6, p=10**9 + 7):
+    def __init__(self, n, k=10 ** 6, p=10 ** 9 + 7):
         # num[i]=nPi
         # den[i]=(i!)^(-1)
         num, den = [1], [1]
@@ -22,9 +22,9 @@ class Comb0():
         return (num[r] * den[r]) % self.p
 
 
-class Comb1():
+class Comb1:
     # あらかじめO(m)の前計算をしておいてn<=mに対してnCrを高速に計算する
-    def __init__(self, m=10**6, p=10**9 + 7):
+    def __init__(self, m=10 ** 6, p=10 ** 9 + 7):
         # fct[i]=i!
         # inv[i]=(i!)^(-1)
         fct, inv = [1], [1]
@@ -45,7 +45,7 @@ class Comb1():
         return (fct[n] * inv[r] * inv[n - r]) % self.p
 
 
-def cmb(x, y, mod=10**9 + 7):
+def cmb(x, y, mod=10 ** 9 + 7):
     if x <= y:
         return 0
     tmp = 1

@@ -1,4 +1,4 @@
-class FFT():
+class FFT:
     def __init__(self, n, p, w):
         # pは素数で, wは1のn乗根(mod p)
         # 例:(n,p,w)=(4,5,2),(8,17,2),(262144,347078657,13)

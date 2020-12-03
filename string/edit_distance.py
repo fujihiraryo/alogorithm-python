@@ -11,6 +11,6 @@ def dist(S, T):
                 c = 0
             else:
                 c = 1
-            DP[i][j] = min(DP[i - 1][j] + 1, DP[i]
-                           [j - 1] + 1, DP[i - 1][j - 1] + c)
+            lst = [DP[i - 1][j] + 1, DP[i][j - 1] + 1, DP[i - 1][j - 1] + c]
+            DP[i][j] = min(lst)
     return DP[len(S)][len(T)]

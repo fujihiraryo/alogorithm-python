@@ -1,29 +1,29 @@
 class HashString:
-    def __init__(self, S, l, r, b=2, p=10**9 + 7):
-        self.S, self.l, self.r, self.b, self.p = S, l, r, b, p
+    def __init__(self, S, x, y, b=2, p=10 ** 9 + 7):
+        self.S, self.x, self.y, self.b, self.p = S, x, y, b, p
         h = 0
-        for i in range(l, r):
+        for i in range(x, y):
             h = (h * b + ord(S[i])) % p
         self.hash = h
 
     def pop_left(self):
-        S, l, r, b, p, h = self.S, self.l, self.r, self.b, self.p, self.hash
-        self.hash = (h - ord(S[l]) * pow(b, r - l - 1, p)) % p
-        self.l += 1
+        S, x, y, b, p, h = self.S, self.x, self.y, self.b, self.p, self.hash
+        self.hash = (h - ord(S[x]) * pow(b, y - x - 1, p)) % p
+        self.x += 1
 
     def pop_right(self):
-        S, l, r, b, p, h = self.S, self.l, self.r, self.b, self.p, self.hash
-        self.hash = ((h - ord(S[r - 1])) * pow(b, p - 2, p)) % p
-        self.r -= 1
+        S, y, b, p, h = self.S, self.y, self.b, self.p, self.hash
+        self.hash = ((h - ord(S[y - 1])) * pow(b, p - 2, p)) % p
+        self.y -= 1
 
     def push_left(self):
-        S, l, r, b, p, h = self.S, self.l, self.r, self.b, self.p, self.hash
-        self.hash = (h + ord(S[l - 1]) * pow(b, r - l, p)) % p
-        self.l -= 1
+        S, x, y, b, p, h = self.S, self.x, self.y, self.b, self.p, self.hash
+        self.hash = (h + ord(S[x - 1]) * pow(b, y - x, p)) % p
+        self.x -= 1
 
     def push_right(self):
-        S, l, r, b, p, h = self.S, self.l, self.r, self.b, self.p, self.hash
-        self.hash = (h * b + ord(S[r])) % p
+        S, y, b, p, h = self.S, self.y, self.b, self.p, self.hash
+        self.hash = (h * b + ord(S[y])) % p
         self.r += 1
 
     def shift_left(self):

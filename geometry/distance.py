@@ -2,7 +2,7 @@ def distancePP(a, b):
     # 点aと点bの距離
     ax, ay = a
     bx, by = b
-    return ((ax - bx)**2 + (ay - by)**2)**0.5
+    return ((ax - bx) ** 2 + (ay - by) ** 2) ** 0.5
 
 
 def distanceLP(p, a, b):

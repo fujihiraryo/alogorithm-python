@@ -1,4 +1,4 @@
-mod = 10**9 + 7
+mod = 10 ** 9 + 7
 
 
 class Lagrange:
@@ -9,15 +9,14 @@ class Lagrange:
         prd = 1
         for i, (xi, yi) in enumerate(self.lst):
             if j != i:
-                prd *= (x - xi)
+                prd *= x - xi
                 prd %= mod
         return prd
 
     def P(self, x):
         tmp = 0
         for i, (xi, yi) in enumerate(self.lst):
-            tmp += yi * (self.f(i, x) *
-                         pow(self.f(i, xi), mod - 2, mod))
+            tmp += yi * (self.f(i, x) * pow(self.f(i, xi), mod - 2, mod))
             tmp %= mod
         return tmp
 
@@ -28,7 +27,7 @@ if __name__ == "__main__":
     def P(x):
         tmp = 0
         for i in range(n):
-            tmp += (i + 1) * x**(n - i)
+            tmp += (i + 1) * x ** (n - i)
             tmp %= mod
         return tmp
 

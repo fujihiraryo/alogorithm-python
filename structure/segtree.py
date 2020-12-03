@@ -1,11 +1,11 @@
-class SegmentTree():
+class SegmentTree:
     # リストSの部分リストからなる集合を葉とするセグメント木
     def __init__(self, S, n):
         self.size = n
-        self.array = [set()] * (2**(self.size + 1) - 1)
+        self.array = [set()] * (2 ** (self.size + 1) - 1)
         for i, c in enumerate(S):
-            self.array[i + 2**self.size - 1] = {c}
-        for i in range(2**self.size - 1)[::-1]:
+            self.array[i + 2 ** self.size - 1] = {c}
+        for i in range(2 ** self.size - 1)[::-1]:
             self.array[i] = self.array[2 * i + 1] | self.array[2 * i + 2]
 
     def subquery(self, a, b, k, i, j):
@@ -19,13 +19,13 @@ class SegmentTree():
             r_set = self.subquery(a, b, 2 * k + 2, (i + j) // 2, j)
             return l_set | r_set
 
-    def query(self, l, r):
-        # [l,r)に含まれる文字の種類数
-        return len(self.subquery(l, r, 0, 0, 2**self.size))
+    def query(self, i, j):
+        # [i,j)に含まれる文字の種類数
+        return len(self.subquery(i, j, 0, 0, 2 ** self.size))
 
     def update(self, i, c):
         # 配列のi番目をcに更新する
-        tmp = i + 2**self.size - 1
+        tmp = i + 2 ** self.size - 1
         self.array[tmp] = {c}
         while tmp > 0:
             tmp = (tmp - 1) // 2

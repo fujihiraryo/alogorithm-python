@@ -1,4 +1,4 @@
-def trisect(f, eps=10**(-5)):
+def trisect(f, eps=10 ** (-5)):
     # 凸関数fのargminとminの近似値を求める
     left = 0.1
     right = 2

@@ -16,5 +16,5 @@ def zalgo(S):
     return A
 
 
-S = 'aaabaaaab'
+S = "aaabaaaab"
 print(zalgo(S))
