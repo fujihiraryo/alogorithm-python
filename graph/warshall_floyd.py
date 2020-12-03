@@ -1,8 +1,8 @@
 def warshall_floyd(G):
-    inf = 10 ** 18
+    INF = 10 ** 18
     # 重みつきグラフGに対してすべての頂点対の距離を求める
     n = len(G)
-    D = [[inf for i in range(n)] for j in range(n)]
+    D = [[INF for i in range(n)] for j in range(n)]
     for i in range(n):
         D[i][i] = 0
         for j in G[i].keys():
