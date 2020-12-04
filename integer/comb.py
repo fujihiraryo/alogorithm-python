@@ -56,7 +56,7 @@ def cmb(x, y, mod=10 ** 9 + 7):
     return tmp
 
 
-# パスカルの三角形(O(n))
+# パスカルの三角形(O(n^2))
 n = 101
 C = [[0 for j in range(n)] for i in range(n)]
 for i in range(n):

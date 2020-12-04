@@ -35,14 +35,14 @@
 | [integer/factrization.py](integer/factrization.py) | 素因数分解 |
 | [integer/fft.py](integer/fft.py) | 剰余環上の高速フーリエ変換 |
 | [integer/lagrange.py](integer/lagrange.py) | 剰余環上の多項式のラグランジュ補間 |
+| [integer/mint.py](integer/mint.py) | 自動でmodをとる整数型 |
+| [integer/polynomial.py](integer/polynomial.py) | 剰余環上の多項式の積分 |
 
 ## 探索
 
 | コード                       | 説明   |
 | :--------------------------- | :----- |
 | [search/bisect.py](search/bisect.py)   | 二分探索  |
-| [search/bit.py](search/bit.py) | bit全探索 |
-| [search/generator.py](search/generator.py) | ジェネレーター |
 | [search/trisect.py](search/trisect.py)   | 三分探索  |
 
 ## 文字列
