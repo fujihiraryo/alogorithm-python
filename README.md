@@ -6,11 +6,10 @@
 
 | コード                       | 説明         |
 | :--------------------------- | :----------- |
-| [geometry/circle.py](geometry/circle.py) | 円   |
-| [geometry/convex.py](geometry/convex.py) | 凸包   |
+| [geometry/circum_center.py](geometry/circum_center.py) | 外心   |
+| [geometry/convex_hull.py](geometry/convex_hull.py) | 凸包   |
 | [geometry/distance.py](geometry/distance.py) | 点と線分の距離 |
 | [geometry/intersect.py](geometry/intersect.py) | 線分の交差判定 |
-| [geometry/triangle.py](geometry/triangle.py) | 三角形   |
 
 ## グラフ
 
@@ -29,14 +28,13 @@
 
 | コード                                       | 説明                     |
 | :------------------------------------------ | :---------------------- |
-| [integer/comb.py](integer/comb.py) | 二項係数 |
+| [integer/combination.py](integer/combination.py) | 二項係数 |
 | [integer/discrete_log.py](integer/discrete_log.py) | 離散対数 |
-| [integer/euclid.py](integer/euclid.py)| ユークリッドの互除法 |
-| [integer/factrization.py](integer/factrization.py) | 素因数分解 |
+| [integer/extended_euclidean.py](integer/extended_euclidean.py)| 拡張ユークリッドの互除法 |
 | [integer/fft.py](integer/fft.py) | 剰余環上の高速フーリエ変換 |
-| [integer/lagrange.py](integer/lagrange.py) | 剰余環上の多項式のラグランジュ補間 |
-| [integer/mint.py](integer/mint.py) | 自動でmodをとる整数型 |
-| [integer/polynomial.py](integer/polynomial.py) | 剰余環上の多項式の積分 |
+| [integer/lagrange_interpolation.py](integer/lagrange_interpolation.py) | ラグランジュ補間 |
+| [integer/polynomial.py](integer/polynomial.py) | 多項式 |
+| [integer/prime_factrization.py](integer/prime_factrization.py) | 素因数分解 |
 
 ## 探索
 
@@ -50,14 +48,13 @@
 | コード                       | 説明   |
 | :--------------------------- | :----- |
 | [string/edit_distance.py](string/edit_distance.py)   | 編集距離 |
-| [string/lcs.py](string/lcs.py)   | 最長共通部分列 |
+| [string/longest_common_subsequence.py](string/longest_common_subsequence.py)   | 最長共通部分列 |
 | [string/rolling_hash.py](string/rolling_hash.py)   | ローリングハッシュ  |
-| [string/z_algorithm.py](string/z_algorithm.py)   | Z-Algorithm  |
+| [string/z_algorithm.py](string/z_algorithm.py)   | Zアルゴリズム  |
 
 ## データ構造
 
 | コード                                             | 説明         |
 | :------------------------------------------------- | :----------- |
-| [structure/segtree.py](structure/segtree.py)       | セグメント木 |
-| [structure/rooted_tree.py](structure/rooted_tree.py)   | 根付き木 |
+| [structure/segment_tree.py](structure/segment_tree.py)       | セグメント木 |
 | [structure/union_find.py](structure/union_find.py) | Union Find   |
