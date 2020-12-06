@@ -16,8 +16,8 @@
 | コード                       | 説明         |
 | :--------------------------- | :----------- |
 | [graph/bellman_ford.py](graph/bellman_ford.py) | ベルマンフォード法  |
-| [graph/bfs.py](graph/bfs.py) | 幅優先探索   |
-| [graph/dfs.py](graph/dfs.py) | 深さ優先探索 |
+| [graph/breadth_first_search.py](graph/breadth_first_search.py) | 幅優先探索   |
+| [graph/depth_first_search.py](graph/depth_first_search.py) | 深さ優先探索 |
 | [graph/dijkstra.py](graph/dijkstra.py) | ダイクストラ法  |
 | [graph/maximum_flow.py](graph/maximum_flow.py) | 最大流 |
 | [graph/minimum_cost_flow.py](graph/minimum_cost_flow.py) | 最小費用流 |

@@ -1,18 +1,24 @@
-def top_sort(G, L):
-    n = len(G)
-    S = [i for i in range(n) if L[i] == 0]
-    A = []
-    while S:
-        i = S.pop()
-        A.append(i)
-        while G[i]:
-            j = G[i].pop()
-            L[j] -= 1
-            if L[j] == 0:
-                S.append(j)
-    return A
-
-
-G = [[3, 6, 7], [3, 4], [0], [], [7], [0, 4], [], []]
-L = [2, 0, 0, 2, 2, 0, 1, 2]
-print(top_sort(G, L))
+def topological_sort(graph):
+    n = len(graph)
+    in_set_list = [set() for _ in range(n)]
+    out_set_list = [set() for _ in range(n)]
+    stack_set = set(range(n))
+    for x in range(n):
+        for y in graph[x]:
+            in_set_list[y].add(x)
+            out_set_list[x].add(y)
+            if y in stack_set:
+                stack_set.remove(y)
+    res = []
+    while stack_set:
+        x = stack_set.pop()
+        res.append(x)
+        while out_set_list[x]:
+            y = out_set_list[x].pop()
+            in_set_list[y].remove(x)
+            if in_set_list[y]:
+                continue
+            stack_set.add(y)
+    if any(out_set_list[x] for x in range(n)):
+        return -1
+    return res

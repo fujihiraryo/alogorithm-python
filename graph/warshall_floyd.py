@@ -1,19 +1,13 @@
-def warshall_floyd(G):
-    INF = 10 ** 18
-    # 重みつきグラフGに対してすべての頂点対の距離を求める
-    n = len(G)
-    D = [[INF for i in range(n)] for j in range(n)]
+def warshall_floyd(graph):
+    INF = 1 << 30
+    n = len(graph)
+    dist = [[INF for i in range(n)] for j in range(n)]
     for i in range(n):
-        D[i][i] = 0
-        for j in G[i].keys():
-            D[i][j] = G[i][j]
+        dist[i][i] = 0
+        for j in graph[i].keys():
+            dist[i][j] = graph[i][j]
     for k in range(n):
         for i in range(n):
             for j in range(n):
-                D[i][j] = min(D[i][j], D[i][k] + D[k][j])
-    return D
-
-
-# テスト
-G = [{1: 5, 2: 1}, {0: 5, 2: 1}, {0: 1, 1: 1}, {}]
-print(warshall_floyd(G))
+                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
+    return dist

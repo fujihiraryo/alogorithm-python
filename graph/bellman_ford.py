@@ -1,22 +1,19 @@
-def bellman_ford(G, r):
-    # rを始点とする各点へのパスの長さを求める
-    n = len(G)
-    E = []
-    for i in range(n):
-        for j in G[i].keys():
-            E.append((i, j, G[i][j]))
+def bellman_ford(graph, start):
     INF = 10 ** 20
-    D = [INF for i in range(n)]
-    D[r] = 0
-    flag = True
+    n = len(graph)
+    dist = [INF] * n
+    dist[start] = 0
+    update = True
     cnt = 0
-    while flag:
-        flag = False
+    while update:
+        update = False
         cnt += 1
         if cnt > n:
-            return
-        for s, t, d in E:
-            if D[s] != INF and D[t] > D[s] + d:
-                D[t] = D[s] + d
-                flag = True
-    return D
+            # 負の閉路を検出
+            return -1
+        for x in range(n):
+            for y in graph[x].keys():
+                if dist[x] != INF and dist[y] > dist[x] + graph[x][y]:
+                    dist[y] = dist[x] + graph[x][y]
+                    update = True
+    return dist
