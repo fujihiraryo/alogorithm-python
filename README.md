@@ -40,8 +40,8 @@
 
 | コード                       | 説明   |
 | :--------------------------- | :----- |
-| [search/bisect.py](search/bisect.py)   | 二分探索  |
-| [search/trisect.py](search/trisect.py)   | 三分探索  |
+| [search/binary_search.py](search/binary_search.py)   | 二分探索  |
+| [search/ternary_search.py](search/ternary_search.py)   | 三分探索  |
 
 ## 文字列
 
