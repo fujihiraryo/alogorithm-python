@@ -1,5 +1,7 @@
+INF = 1 << 30
+
+
 def bellman_ford(graph, start):
-    INF = 1 << 30
     n = len(graph)
     dist = [INF] * n
     dist[start] = 0

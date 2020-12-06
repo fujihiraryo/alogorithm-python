@@ -1,8 +1,9 @@
 import heapq
 
+INF = 1 << 30
+
 
 def dijkstra(graph, start):
-    INF = 1 << 30
     dist = [INF] * len(graph)
     dist[start] = 0
     heap = [(0, start)]

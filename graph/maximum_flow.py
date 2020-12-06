@@ -1,5 +1,7 @@
+INF = 1 << 30
+
+
 def maximum_flow(graph, start, goal):
-    INF = 1 << 30
     n = len(graph)
     max_flow = 0
     while True:

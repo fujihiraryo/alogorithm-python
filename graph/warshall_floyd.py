@@ -1,5 +1,7 @@
+INF = 1 << 30
+
+
 def warshall_floyd(graph):
-    INF = 1 << 30
     n = len(graph)
     dist = [[INF] * n for _ in range(n)]
     for x in range(n):
