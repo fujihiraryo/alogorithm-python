@@ -1,6 +1,6 @@
 def minimum_cost_flow(graph, start, goal, flow):
-    n = len(graph)
     INF = 1 << 30
+    n = len(graph)
     residual_flow = flow
     min_cost = 0
     while residual_flow:

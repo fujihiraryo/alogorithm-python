@@ -1,13 +1,13 @@
 def warshall_floyd(graph):
     INF = 1 << 30
     n = len(graph)
-    dist = [[INF for i in range(n)] for j in range(n)]
-    for i in range(n):
-        dist[i][i] = 0
-        for j in graph[i].keys():
-            dist[i][j] = graph[i][j]
-    for k in range(n):
-        for i in range(n):
-            for j in range(n):
-                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
+    dist = [[INF] * n for _ in range(n)]
+    for x in range(n):
+        dist[x][x] = 0
+        for y in graph[x]:
+            dist[x][y] = graph[x][y]
+    for z in range(n):
+        for x in range(n):
+            for y in range(n):
+                dist[x][y] = min(dist[x][y], dist[x][z] + dist[z][y])
     return dist
