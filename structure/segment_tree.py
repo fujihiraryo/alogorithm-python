@@ -1,32 +1,28 @@
 class SegmentTree:
-    # リストSの部分リストからなる集合を葉とするセグメント木
-    def __init__(self, S, n):
-        self.size = n
-        self.array = [set()] * (2 ** (self.size + 1) - 1)
-        for i, c in enumerate(S):
-            self.array[i + 2 ** self.size - 1] = {c}
-        for i in range(2 ** self.size - 1)[::-1]:
-            self.array[i] = self.array[2 * i + 1] | self.array[2 * i + 2]
+    def __init__(self, size):
+        self.size = 1 << (size - 1).bit_length()
+        self.tree = [0] * (self.size << 1)
 
-    def subquery(self, a, b, k, i, j):
-        # 区間[i,j)の中で区間[a,b)の文字列の集合を返す
-        if j <= a or b <= i:
-            return set()
-        elif a <= i and j <= b:
-            return self.array[k]
-        else:
-            l_set = self.subquery(a, b, 2 * k + 1, i, (i + j) // 2)
-            r_set = self.subquery(a, b, 2 * k + 2, (i + j) // 2, j)
-            return l_set | r_set
+    def get(self, i):
+        return self.tree[i + self.size]
+
+    def update(self, i, x):
+        i += self.size
+        while i > 0:
+            self.tree[i] = x
+            x = self.tree[i] + self.tree[i ^ 1]
+            i >>= 1
 
     def query(self, i, j):
-        # [i,j)に含まれる文字の種類数
-        return len(self.subquery(i, j, 0, 0, 2 ** self.size))
-
-    def update(self, i, c):
-        # 配列のi番目をcに更新する
-        tmp = i + 2 ** self.size - 1
-        self.array[tmp] = {c}
-        while tmp > 0:
-            tmp = (tmp - 1) // 2
-            self.array[tmp] = self.array[2 * tmp + 1] | self.array[2 * tmp + 2]
+        x = 0
+        i += self.size
+        j += self.size
+        while i < j:
+            if i & 1:
+                x += self.tree[i]
+                i += 1
+            if j & 1:
+                x += self.tree[j - 1]
+            i >>= 1
+            j >>= 1
+        return x
