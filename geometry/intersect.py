@@ -9,11 +9,3 @@ def intersect(a, b, c, d):
     tc = (ax - bx) * (cy - ay) + (ay - by) * (ax - cx)
     td = (ax - bx) * (dy - ay) + (ay - by) * (ax - dx)
     return tc * td <= 0 and ta * tb <= 0
-
-
-# テスト
-a, b, c, d = (0, 0), (1, 1), (0, 1), (1, 0)
-print(intersect(a, b, c, d))
-
-a, b, c, d = (0, 0), (0, 1), (1, 0), (1, 1)
-print(intersect(a, b, c, d))

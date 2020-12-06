@@ -1,38 +1,30 @@
 def counter_clock(a, b, p):
-    # 線分abに対してpが反時計回りにあるか
     ax, ay = a
     bx, by = b
     px, py = p
     return (bx - ax) * (py - ay) > (by - ay) * (px - ax)
 
 
-def convex(P):
-    # 点群Pの凸包
-    P.sort()
-    n = len(P)
-    U = []
-    for i in range(n):
+def convex_hull(point_list):
+    point_list.sort()
+    upper_list = []
+    for i, p in enumerate(point_list):
         if i < 2:
-            U.append(P[i])
+            upper_list.append(p)
             continue
-        a, b, p = U[-2], U[-1], P[i]
-        while counter_clock(a, b, p) and len(U) > 2:
-            U.pop()
-            a, b = U[-2], U[-1]
-        U.append(p)
-    L = []
-    for i in range(n):
+        a, b = upper_list[-2], upper_list[-1]
+        while counter_clock(a, b, p) and len(upper_list) > 2:
+            upper_list.pop()
+            a, b = upper_list[-2], upper_list[-1]
+        upper_list.append(p)
+    lower_list = []
+    for i, p in enumerate(lower_list):
         if i < 2:
-            L.append(P[i])
+            lower_list.append(p)
             continue
-        a, b, p = L[-2], L[-1], P[i]
-        while not counter_clock(a, b, p) and len(L) > 2:
-            L.pop()
-            a, b = L[-2], L[-1]
-        L.append(p)
-    return list(set(U + L))
-
-
-# テスト
-P = [(0, 0), (1, 2), (2, 1), (5, 0), (2, -1), (1, -2)]
-print(convex(P))
+        a, b = lower_list[-2], lower_list[-1]
+        while not counter_clock(a, b, p) and len(lower_list) > 2:
+            lower_list.pop()
+            a, b = lower_list[-2], lower_list[-1]
+        lower_list.append(p)
+    return list(set(upper_list + lower_list))
