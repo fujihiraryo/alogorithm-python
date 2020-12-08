@@ -28,12 +28,9 @@
 
 | コード                                       | 説明                     |
 | :------------------------------------------ | :---------------------- |
-| [integer/combination.py](integer/combination.py) | 二項係数 |
-| [integer/discrete_log.py](integer/discrete_log.py) | 離散対数 |
 | [integer/extended_euclidean.py](integer/extended_euclidean.py)| 拡張ユークリッドの互除法 |
-| [integer/fft.py](integer/fft.py) | 剰余環上の高速フーリエ変換 |
-| [integer/lagrange_interpolation.py](integer/lagrange_interpolation.py) | ラグランジュ補間 |
-| [integer/polynomial.py](integer/polynomial.py) | 多項式 |
+| [integer/fourier_transform.py](integer/fourier_transform.py) | 剰余環上の高速フーリエ変換 |
+| [integer/lagrange_polynomial.py](integer/lagrange_polynomial.py) | ラグランジュ補間 |
 | [integer/prime_factrization.py](integer/prime_factrization.py) | 素因数分解 |
 
 ## 探索
