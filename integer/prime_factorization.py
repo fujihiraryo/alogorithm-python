@@ -1,4 +1,4 @@
-def factrize(x):
+def factorize(x):
     factor = {}
     tmp = x
     i = 2
