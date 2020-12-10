@@ -1,4 +1,4 @@
-def edit_distance(s, t):
+def levenshtein_distance(s, t):
     m, n = len(s), len(t)
     dp = [[0 for j in range(n + 1)] for i in range(m + 1)]
     for i in range(m + 1):

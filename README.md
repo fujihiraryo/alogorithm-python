@@ -44,7 +44,7 @@
 
 | コード                       | 説明   |
 | :--------------------------- | :----- |
-| [string/edit_distance.py](string/edit_distance.py)   | 編集距離 |
+| [string/levenshetein_distance.py](string/levenshetein_distance.py)   | 編集距離 |
 | [string/longest_common_subsequence.py](string/longest_common_subsequence.py)   | 最長共通部分列 |
 | [string/rolling_hash.py](string/rolling_hash.py)   | ローリングハッシュ  |
 | [string/z_algorithm.py](string/z_algorithm.py)   | Zアルゴリズム  |
