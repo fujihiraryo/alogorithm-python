@@ -3,7 +3,7 @@ class SegmentTree:
         self.size = 1 << (size - 1).bit_length()
         self.tree = [0] * (self.size << 1)
 
-    def get(self, i):
+    def __getitem__(self, i):
         return self.tree[i + self.size]
 
     def update(self, i, x):
@@ -13,7 +13,7 @@ class SegmentTree:
             x = self.tree[i] + self.tree[i ^ 1]
             i >>= 1
 
-    def query(self, i, j):
+    def range_sum(self, i, j):
         x = 0
         i += self.size
         j += self.size
