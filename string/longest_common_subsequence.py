@@ -20,9 +20,3 @@ def longest_common_subsequence(s, t):
         else:
             n -= 1
     return res
-
-
-if __name__ == "__main__":
-    s = "abracadabra"
-    t = "avadakedavra"
-    print(longest_common_subsequence(s, t))
