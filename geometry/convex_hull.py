@@ -27,4 +27,4 @@ def convex_hull(point_list):
             lower_list.pop()
             a, b = lower_list[-2], lower_list[-1]
         lower_list.append(p)
-    return list(set(upper_list + lower_list))
+    return set(upper_list + lower_list)
