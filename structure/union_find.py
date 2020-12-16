@@ -8,7 +8,7 @@ class UnionFind:
         return i
 
     def unite(self, i, j):
-        i0, j0 = self.find(i), self.find(j)
-        if i0 > j0:
-            i0, j0 = j0, i0
-        self.parent[j0] = i0
+        i, j = self.find(i), self.find(j)
+        if i > j:
+            i, j = j, i
+        self.parent[j] = i
