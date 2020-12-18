@@ -47,6 +47,7 @@
 | [string/levenshetein_distance.py](string/levenshetein_distance.py)   | 編集距離 |
 | [string/longest_common_prefix.py](string/longest_common_prefix.py)   | 最長共通接頭辞 |
 | [string/longest_common_subsequence.py](string/longest_common_subsequence.py)   | 最長共通部分列 |
+| [string/longest_increasing_subsequence.py](string/longest_increasing_subsequence.py)   | 最長増加部分列 |
 
 ## データ構造
 
