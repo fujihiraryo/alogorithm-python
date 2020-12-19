@@ -53,5 +53,6 @@
 
 | コード                                             | 説明         |
 | :------------------------------------------------- | :----------- |
+| [structure/fenwick_tree.py](structure/fenwick_tree.py)       | フェニック木 |
 | [structure/segment_tree.py](structure/segment_tree.py)       | セグメント木 |
 | [structure/union_find.py](structure/union_find.py) | Union Find   |
