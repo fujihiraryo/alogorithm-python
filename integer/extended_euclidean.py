@@ -6,4 +6,11 @@ def ext_euclid(a, b):
         x0, x1 = x1 - x0 * (r1 // r0), x0
         y0, y1 = y1 - y0 * (r1 // r0), y0
         r0, r1 = r1 % r0, r0
-    return x1, y1
+    return x1, y1, r1
+
+
+def mod_inv(a, m):
+    x, _, r = ext_euclid(a, m)
+    if r != 1:
+        return -1
+    return x % m
