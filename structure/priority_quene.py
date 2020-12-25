@@ -22,6 +22,6 @@ class PriorityQuene:
             return
         self.count[x] -= 1
         while self.heap:
-            if self.count[self.heap[0]]:
+            if self.count[self.top()]:
                 break
             heapq.heappop(self.heap)
