@@ -54,6 +54,8 @@
 | コード                                             | 説明         |
 | :------------------------------------------------- | :----------- |
 | [structure/fenwick_tree.py](structure/fenwick_tree.py)       | フェニック木 |
+
 | [structure/ordered_set.py](structure/ordered_set.py)       | 順序付き集合 |
+| [structure/priority_quene.py](structure/priority_quene.py)       | 優先度付きキュー |
 | [structure/segment_tree.py](structure/segment_tree.py)       | セグメント木 |
 | [structure/union_find.py](structure/union_find.py) | Union Find   |
