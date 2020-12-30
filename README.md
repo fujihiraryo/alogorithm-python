@@ -2,6 +2,15 @@
 
 競プロ用 Python ライブラリ
 
+## 配列
+
+| コード                       | 説明   |
+| :--------------------------- | :----- |
+| [array/levenshetein_distance.py](array/levenshetein_distance.py)   | 編集距離 |
+| [array/longest_common_prefix.py](array/longest_common_prefix.py)   | 最長共通接頭辞 |
+| [array/longest_common_subsequence.py](array/longest_common_subsequence.py)   | 最長共通部分列 |
+| [array/longest_increasing_subsequence.py](array/longest_increasing_subsequence.py)   | 最長増加部分列 |
+
 ## 幾何
 
 | コード                       | 説明         |
@@ -39,15 +48,6 @@
 | :--------------------------- | :----- |
 | [search/binary_search.py](search/binary_search.py)   | 二分探索  |
 | [search/ternary_search.py](search/ternary_search.py)   | 三分探索  |
-
-## 文字列
-
-| コード                       | 説明   |
-| :--------------------------- | :----- |
-| [string/levenshetein_distance.py](string/levenshetein_distance.py)   | 編集距離 |
-| [string/longest_common_prefix.py](string/longest_common_prefix.py)   | 最長共通接頭辞 |
-| [string/longest_common_subsequence.py](string/longest_common_subsequence.py)   | 最長共通部分列 |
-| [string/longest_increasing_subsequence.py](string/longest_increasing_subsequence.py)   | 最長増加部分列 |
 
 ## データ構造
 
