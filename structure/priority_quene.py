@@ -12,7 +12,9 @@ class PriorityQuene:
         self.count[x] += 1
 
     def pop(self):
-        return heapq.heappop(self.heap)
+        res = self.top()
+        self.remove(res)
+        return res
 
     def top(self):
         return self.heap[0]
@@ -25,3 +27,6 @@ class PriorityQuene:
             if self.count[self.top()]:
                 break
             heapq.heappop(self.heap)
+
+    def __bool__(self):
+        return bool(self.heap)
