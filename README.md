@@ -6,6 +6,7 @@
 
 | コード                       | 説明   |
 | :--------------------------- | :----- |
+| [array/inversion_number.py](array/inversion_number.py)   | 転倒数 |
 | [array/levenshetein_distance.py](array/levenshetein_distance.py)   | 編集距離 |
 | [array/longest_common_prefix.py](array/longest_common_prefix.py)   | 最長共通接頭辞 |
 | [array/longest_common_subsequence.py](array/longest_common_subsequence.py)   | 最長共通部分列 |
