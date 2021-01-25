@@ -34,6 +34,7 @@
 | [graph/dijkstra.py](graph/dijkstra.py) | ダイクストラ法  |
 | [graph/maximum_flow.py](graph/maximum_flow.py) | 最大流 |
 | [graph/minimum_cost_flow.py](graph/minimum_cost_flow.py) | 最小費用流 |
+| [graph/strongly_connected.py](graph/strongly_connected.py) | 強連結成分分解 |
 | [graph/topological_sort.py](graph/topological_sort.py) | トポロジカルソート |
 | [graph/warshall_floyd.py](graph/warshall_floyd.py) | ワーシャルフロイド法 |
 
