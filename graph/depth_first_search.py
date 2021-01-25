@@ -1,49 +1,29 @@
-from dataclasses import dataclass
+import sys
+
+sys.setrecursionlimit(10 ** 7)
 
 
-@dataclass
-class Forest:
-    discovered: list
-    finished: list
-    parent: list
-    children: list
+class DFS:
+    def __init__(self, graph):
+        n = len(graph)
+        self.graph = graph
+        self.visited = [0] * n
+        self.preorder = []
+        self.postorder = []
+        self.parent = [-1] * n
+        self.children = [[] for _ in range(n)]
+        for i in range(n):
+            if self.visited[i]:
+                continue
+            self.visit(i)
 
-
-def dfs(graph):
-    n = len(graph)
-    discovered = [-1] * n
-    finished = [-1] * n
-    parent = [-1] * n
-    children = [[] for _ in range(n)]
-    time = 0
-    for i in range(n):
-        if discovered[i] != -1:
-            continue
-        stack = [(i, -1)]
-        while stack:
-            x, p = stack[-1]
-            if discovered[x] == -1:
-                discovered[x] = time
-                parent[x] = p
-                children[p].append(x)
-                time += 1
-            stop = 1
-            for y in graph[x]:
-                if discovered[y] != -1:
-                    continue
-                stop = 0
-                stack.append((y, x))
-                break
-            if stop:
-                stack.pop()
-                finished[x] = time
-                time += 1
-    return Forest(discovered, finished, parent, children)
-
-
-graph = [[4, 7], [2, 3], [1, 3], [0, 4], [5], [7], [5], [6]]
-forest = dfs(graph)
-print(forest.discovered)
-print(forest.finished)
-print(forest.parent)
-print(forest.children)
+    def visit(self, x):
+        self.visited[x] = 1
+        self.preorder.append(x)
+        for y in self.graph[x]:
+            if self.visited[y]:
+                continue
+            self.parent[y] = x
+            self.children[x].append(y)
+            self.visit(y)
+        self.postorder.append(x)
