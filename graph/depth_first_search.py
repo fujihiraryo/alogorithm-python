@@ -10,6 +10,9 @@ class DFS:
         self.visited = [0] * n
         self.preorder = []
         self.postorder = []
+        self.pretime = [0] * n
+        self.posttime = [0] * n
+        self.time = 0
         self.parent = [-1] * n
         self.children = [[] for _ in range(n)]
         for i in range(n):
@@ -20,6 +23,8 @@ class DFS:
     def visit(self, x):
         self.visited[x] = 1
         self.preorder.append(x)
+        self.pretime[x] = self.time
+        self.time += 1
         for y in self.graph[x]:
             if self.visited[y]:
                 continue
@@ -27,3 +32,5 @@ class DFS:
             self.children[x].append(y)
             self.visit(y)
         self.postorder.append(x)
+        self.posttime[x] = self.time
+        self.time += 1
