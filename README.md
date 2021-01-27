@@ -33,6 +33,7 @@
 | [graph/bridges.py](graph/bridges.py) | 橋  |
 | [graph/depth_first_search.py](graph/depth_first_search.py) | 深さ優先探索 |
 | [graph/dijkstra.py](graph/dijkstra.py) | ダイクストラ法  |
+| [graph/heavy_light_decomposition.py](graph/heavy_light_decomposition.py) | HL分解 |
 | [graph/maximum_flow.py](graph/maximum_flow.py) | 最大流 |
 | [graph/minimum_cost_flow.py](graph/minimum_cost_flow.py) | 最小費用流 |
 | [graph/strongly_connected.py](graph/strongly_connected.py) | 強連結成分分解 |
