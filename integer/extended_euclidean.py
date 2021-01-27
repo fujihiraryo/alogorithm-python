@@ -14,3 +14,12 @@ def mod_inv(a, m):
     if r != 1:
         return -1
     return x % m
+
+
+def solve(a, b, m):
+    # ax=b(mod m)を解く
+    _, _, g = ext_euclid(a, m)
+    if b % g:
+        return -1
+    x, y, _ = ext_euclid(a // g, m // g)
+    return x * (b // g) % (m // g)
