@@ -1,4 +1,4 @@
-def longest_common_prefix(s):
+def lcp(s):
     n = len(s)
     a = [0] * n
     j = 0

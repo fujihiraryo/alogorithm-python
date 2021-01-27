@@ -1,4 +1,4 @@
-def breadth_first_search(graph, start):
+def bfs(graph, start):
     dist = [-1] * len(graph)
     dist[start] = 0
     queue = [start]

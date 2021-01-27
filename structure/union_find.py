@@ -1,7 +1,7 @@
 class UnionFind:
-    def __init__(self, size):
-        self.parent = list(range(size))
-        self.group_size = [1] * size
+    def __init__(self, n):
+        self.parent = list(range(n))
+        self.group_size = [1] * n
 
     def find(self, i):
         j = i

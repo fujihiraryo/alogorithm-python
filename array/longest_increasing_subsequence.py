@@ -1,7 +1,7 @@
 import bisect
 
 
-def longest_increasing_subsequence(a):
+def lis(a):
     n = len(a)
     b = []
     for i in range(n):
