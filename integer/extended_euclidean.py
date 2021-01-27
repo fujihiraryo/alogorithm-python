@@ -23,3 +23,15 @@ def solve(a, b, m):
         return -1
     x, y, _ = ext_euclid(a // g, m // g)
     return x * (b // g) % (m // g)
+
+
+def crt(m, r):
+    # 各iでx%m[i]=r[i]となるxを求める
+    p = 1
+    x = 0
+    n = len(m)
+    for i in range(n):
+        t = (r[i] - x) * mod_inv(p, m[i]) % m[i]
+        x += t * p
+        p *= m[i]
+    return x
