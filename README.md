@@ -50,13 +50,6 @@
 | [integer/matrix.py](integer/matrix.py) | 行列累乗 |
 | [integer/prime_factorization.py](integer/prime_factorization.py) | 素因数分解 |
 
-## 探索
-
-| コード                       | 説明   |
-| :--------------------------- | :----- |
-| [search/binary_search.py](search/binary_search.py)   | 二分探索  |
-| [search/ternary_search.py](search/ternary_search.py)   | 三分探索  |
-
 ## データ構造
 
 | コード                                             | 説明         |
@@ -66,4 +59,5 @@
 | [structure/priority_quene.py](structure/priority_quene.py)       | 優先度付きキュー |
 | [structure/segment_tree.py](structure/segment_tree.py)       | セグメント木 |
 | [structure/sparse_table.py](structure/sparse_table.py)       | スパーステーブル |
+| [structure/square_root_decomposition.py](structure/square_root_decomposition.py)       | 平方分割 |
 | [structure/union_find.py](structure/union_find.py) | Union Find   |
