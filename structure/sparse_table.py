@@ -15,12 +15,3 @@ class SparseTable:
     def range(self, i, j):
         k = self.bit_length[j - i] - 1
         return min(self.table[i][k], self.table[j - 2 ** k][k])
-
-
-n, k = map(int, input().split())
-(*a,) = map(int, input().split())
-st = SparseTable(a)
-ans = []
-for i in range(n - k + 1):
-    ans.append(st.range(i, i + k))
-print(*ans)
