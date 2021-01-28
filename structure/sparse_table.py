@@ -19,7 +19,7 @@ class SparseTable:
 
 n, k = map(int, input().split())
 (*a,) = map(int, input().split())
-st = SparceTable(a)
+st = SparseTable(a)
 ans = []
 for i in range(n - k + 1):
     ans.append(st.range(i, i + k))
