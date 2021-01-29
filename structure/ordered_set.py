@@ -1,5 +1,5 @@
 class OrderedSet:
-    # 長さnでn未満の要素からなる整列集合
+    # n未満の要素からなる整列集合
     def __init__(self, n):
         d = 1
         while d ** 2 < n:
