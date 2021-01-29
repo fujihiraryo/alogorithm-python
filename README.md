@@ -18,6 +18,7 @@
 
 | コード                       | 説明         |
 | :--------------------------- | :----------- |
+| [geometry/affine_transform.py](geometry/affine_transform.py) | アファイン変換   |
 | [geometry/circum_center.py](geometry/circum_center.py) | 外心   |
 | [geometry/convex_hull.py](geometry/convex_hull.py) | 凸包   |
 | [geometry/distance.py](geometry/distance.py) | 点と線分の距離 |
