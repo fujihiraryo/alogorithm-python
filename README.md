@@ -12,6 +12,7 @@
 | [array/longest_common_prefix.py](array/longest_common_prefix.py)   | 最長共通接頭辞 |
 | [array/longest_common_subsequence.py](array/longest_common_subsequence.py)   | 最長共通部分列 |
 | [array/longest_increasing_subsequence.py](array/longest_increasing_subsequence.py)   | 最長増加部分列 |
+| [array/lower_bound.py](array/lower_bound.py)   | 二分探索 |
 | [array/slide_minimum.py](array/slide_minimum.py)   | スライド最小値 |
 
 ## 幾何
