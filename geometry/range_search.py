@@ -22,10 +22,10 @@ class RangeSearch:
         self.sorted_x = sorted_x
         self.sorted_y = sorted_y
         self.bucket = bucket
-        self.bucket_count = d
+        self.size = d
 
     def query(self, sx, tx, sy, ty):
-        d = self.bucket_count
+        d = self.size
         ix = bisect.bisect_left(self.sorted_x[d - 1 :: d], sx)
         jx = bisect.bisect_right(self.sorted_x[0::d], tx)
         for i in range(ix, jx):
