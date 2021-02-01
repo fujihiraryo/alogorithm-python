@@ -24,6 +24,7 @@
 | [geometry/convex_hull.py](geometry/convex_hull.py) | 凸包   |
 | [geometry/distance.py](geometry/distance.py) | 点と線分の距離 |
 | [geometry/intersect.py](geometry/intersect.py) | 線分の交差判定 |
+| [geometry/range_search.py](geometry/range_search.py) | 領域探索 |
 
 ## グラフ
 
