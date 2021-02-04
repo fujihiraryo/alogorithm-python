@@ -3,7 +3,7 @@ class LazySegmentTree:
         self.size = n
         self.data = [ide] * (self.size << 1)
         for k in range(1, self.size)[::-1]:
-            self.data[k] = self.data[2 * k] + self.data[2 * k + 1]
+            self.data[k] = self.data[k << 1] + self.data[k << 1 | 1]
         self.memo = [ope] * (self.size << 1)
         self.ide = ide
         self.ope = ope
@@ -11,57 +11,57 @@ class LazySegmentTree:
     def __covering_index(self, i, j):
         i0 = i + self.size
         j0 = j + self.size
-        i1 = (i0 // (i0 & -i0)) // 2
-        j1 = (j0 // (j0 & -j0)) // 2
+        i1 = (i0 // (i0 & -i0)) >> 1
+        j1 = (j0 // (j0 & -j0)) >> 1
         while i0 < j0:
             if j0 <= j1:
                 yield j0
             if i0 <= i1:
                 yield i0
-            i0 //= 2
-            j0 //= 2
+            i0 >>= 1
+            j0 >>= 1
         while i0:
             yield i0
-            i0 //= 2
+            i0 >>= 1
 
     def __covered_index(self, i, j):
         i0 = i + self.size
         j0 = j + self.size
         while i0 < j0:
-            if i0 % 2:
+            if i0 & 1:
                 yield i0
                 i0 += 1
-            i0 //= 2
-            j0 //= 2
+            i0 >>= 1
+            j0 >>= 1
         i0 = i + self.size
         j0 = j + self.size
         while i0 < j0:
-            if i0 % 2:
+            if i0 & 1:
                 i0 += 1
-            if j0 % 2:
+            if j0 & 1:
                 yield j0 - 1
-            i0 //= 2
-            j0 //= 2
+            i0 >>= 1
+            j0 >>= 1
 
     def __lazy_update(self, k):
         if self.memo[k] == self.ope:
             return
         if k < self.size:
-            self.memo[2 * k] = self.memo[k] * self.memo[2 * k]
-            self.data[2 * k] = self.memo[k](self.data[2 * k])
-            self.memo[2 * k + 1] = self.memo[k] * self.memo[2 * k + 1]
-            self.data[2 * k + 1] = self.memo[k](self.data[2 * k + 1])
+            self.memo[k << 1] = self.memo[k] * self.memo[k << 1]
+            self.data[k << 1] = self.memo[k](self.data[k << 1])
+            self.memo[k << 1 | 1] = self.memo[k] * self.memo[k << 1 | 1]
+            self.data[k << 1 | 1] = self.memo[k](self.data[k << 1 | 1])
         self.memo[k].__init__()
 
-    def range_update(self, i, j, ope):
+    def range_apply(self, i, j, ope):
         for k in [*self.__covering_index(i, j)][::-1]:
             self.__lazy_update(k)
         for k in self.__covered_index(i, j):
             self.memo[k] = ope * self.memo[k]
             self.data[k] = ope(self.data[k])
         for k in self.__covering_index(i, j):
-            left = self.data[2 * k]
-            right = self.data[2 * k + 1]
+            left = self.data[k << 1]
+            right = self.data[k << 1 | 1]
             self.data[k] = left + right
 
     def range_merge(self, i, j):

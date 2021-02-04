@@ -8,28 +8,28 @@ class SegmentTree:
         i0 = i + self.size
         j0 = j + self.size
         while i0 < j0:
-            if i0 % 2:
+            if i0 & 1:
                 yield i0
                 i0 += 1
-            i0 //= 2
-            j0 //= 2
+            i0 >>= 1
+            j0 >>= 1
         i0 = i + self.size
         j0 = j + self.size
         while i0 < j0:
-            if i0 % 2:
+            if i0 & 1:
                 i0 += 1
-            if j0 % 2:
+            if j0 & 1:
                 yield j0 - 1
-            i0 //= 2
-            j0 //= 2
+            i0 >>= 1
+            j0 >>= 1
 
     def update(self, i, ope):
         i0 = i + self.size
         self.data[i0] = ope(self.data[i0])
         while i0:
             i0 >>= 1
-            left = self.data[2 * i0]
-            right = self.data[2 * i0 + 1]
+            left = self.data[i0 << 1]
+            right = self.data[i0 << 1 | 1]
             self.data[i0] = left + right
 
     def range_merge(self, i, j):
