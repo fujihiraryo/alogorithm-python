@@ -1,6 +1,6 @@
 class LazySegmentTree:
     def __init__(self, n, ide, ope):
-        self.size = 1 << (n - 1).bit_length()
+        self.size = n
         self.data = [ide] * (self.size << 1)
         for k in range(1, self.size)[::-1]:
             self.data[k] = self.data[2 * k] + self.data[2 * k + 1]

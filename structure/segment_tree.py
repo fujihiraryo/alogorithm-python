@@ -1,6 +1,6 @@
 class SegmentTree:
     def __init__(self, n, ide):
-        self.size = 1 << n.bit_length()
+        self.size = n
         self.data = [ide] * (self.size << 1)
         self.ide = ide
 
