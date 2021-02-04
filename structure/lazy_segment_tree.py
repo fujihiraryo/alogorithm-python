@@ -1,12 +1,16 @@
 class LazySegmentTree:
-    def __init__(self, n, ide, ope):
-        self.size = n
-        self.data = [ide] * (self.size << 1)
-        for k in range(1, self.size)[::-1]:
-            self.data[k] = self.data[k << 1] + self.data[k << 1 | 1]
-        self.memo = [ope] * (self.size << 1)
+    def __init__(self, a, ide, idf, fold, compose, apply):
+        self.size = len(a)
         self.ide = ide
-        self.ope = ope
+        self.idf = idf
+        self.fold = fold
+        self.compose = compose
+        self.apply = apply
+        self.data = [self.ide] * (self.size << 1)
+        self.memo = [self.idf] * (self.size << 1)
+        self.data[self.size :] = a
+        for k in range(1, self.size)[::-1]:
+            self.data[k] = self.fold(self.data[k << 1], self.data[k << 1 | 1])
 
     def __covering_index(self, i, j):
         i0 = i + self.size
@@ -31,77 +35,36 @@ class LazySegmentTree:
             if i0 & 1:
                 yield i0
                 i0 += 1
-            i0 >>= 1
-            j0 >>= 1
-        i0 = i + self.size
-        j0 = j + self.size
-        while i0 < j0:
-            if i0 & 1:
-                i0 += 1
             if j0 & 1:
                 yield j0 - 1
             i0 >>= 1
             j0 >>= 1
 
     def __lazy_update(self, k):
-        if self.memo[k] == self.ope:
+        if self.memo[k] == self.idf:
             return
         if k < self.size:
-            self.memo[k << 1] = self.memo[k] * self.memo[k << 1]
-            self.data[k << 1] = self.memo[k](self.data[k << 1])
-            self.memo[k << 1 | 1] = self.memo[k] * self.memo[k << 1 | 1]
-            self.data[k << 1 | 1] = self.memo[k](self.data[k << 1 | 1])
-        self.memo[k].__init__()
+            self.memo[k << 1] = self.compose(self.memo[k], self.memo[k << 1])
+            self.data[k << 1] = self.apply(self.memo[k], self.data[k << 1])
+            self.memo[k << 1 | 1] = self.compose(self.memo[k], self.memo[k << 1 | 1])
+            self.data[k << 1 | 1] = self.apply(self.memo[k], self.data[k << 1 | 1])
+        self.memo[k] = self.idf
 
-    def range_apply(self, i, j, ope):
-        for k in [*self.__covering_index(i, j)][::-1]:
+    def range_apply(self, i, j, f):
+        covering = [*self.__covering_index(i, j)]
+        for k in covering[::-1]:
             self.__lazy_update(k)
         for k in self.__covered_index(i, j):
-            self.memo[k] = ope * self.memo[k]
-            self.data[k] = ope(self.data[k])
-        for k in self.__covering_index(i, j):
-            left = self.data[k << 1]
-            right = self.data[k << 1 | 1]
-            self.data[k] = left + right
+            self.memo[k] = self.compose(f, self.memo[k])
+            self.data[k] = self.apply(f, self.data[k])
+        for k in covering:
+            self.data[k] = self.fold(self.data[k << 1], self.data[k << 1 | 1])
 
-    def range_merge(self, i, j):
-        for k in [*self.__covering_index(i, j)][::-1]:
+    def range_fold(self, i, j):
+        covering = [*self.__covering_index(i, j)]
+        for k in covering[::-1]:
             self.__lazy_update(k)
         x = self.ide
         for k in self.__covered_index(i, j):
-            x = x + self.data[k]
+            x = self.fold(x, self.data[k])
         return x
-
-
-class Monoid:
-    # example(Range Sum)
-    def __init__(self, value=0, length=1, MOD=998244353):
-        self.value = value
-        self.length = length
-        self.MOD = MOD
-
-    def __add__(self, other):
-        value = self.value + other.value
-        length = self.length + other.length
-        return Monoid(value % self.MOD, length)
-
-
-class Operator:
-    # example(Range Affine)
-    def __init__(self, param=(1, 0), MOD=998244353):
-        self.param = param
-        self.MOD = MOD
-
-    def __call__(self, monoid):
-        b, c = self.param
-        value = b * monoid.value + monoid.length * c
-        return Monoid(value % self.MOD, monoid.length)
-
-    def __mul__(self, other):
-        b0, c0 = self.param
-        b1, c1 = other.param
-        b, c = b0 * b1, b0 * c1 + c0
-        return Operator((b % self.MOD, c % self.MOD))
-
-    def __eq__(self, other):
-        return self.param == other.param
