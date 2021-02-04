@@ -57,4 +57,5 @@ class Operator:
         self.x = x
 
     def __call__(self, monoid):
-        return Monoid(self.x * monoid.length + monoid.value, monoid.length)
+        value = self.x * monoid.length + monoid.value
+        return Monoid(value, monoid.length)
