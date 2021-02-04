@@ -74,42 +74,34 @@ class LazySegmentTree:
 
 
 class Monoid:
-    # example(RSQ)
-    def __init__(self, value=0, length=1):
+    # example(Range Sum)
+    def __init__(self, value=0, length=1, MOD=998244353):
         self.value = value
         self.length = length
+        self.MOD = MOD
 
     def __add__(self, other):
         value = self.value + other.value
         length = self.length + other.length
-        return Monoid(value, length)
+        return Monoid(value % self.MOD, length)
 
 
 class Operator:
-    # example(RUQ)
-    def __init__(self, param=None):
+    # example(Range Affine)
+    def __init__(self, param=(1, 0), MOD=998244353):
         self.param = param
+        self.MOD = MOD
 
     def __call__(self, monoid):
-        if self.param is None:
-            return monoid
-        value = self.param * monoid.length
-        return Monoid(value, monoid.length)
+        b, c = self.param
+        value = b * monoid.value + monoid.length * c
+        return Monoid(value % self.MOD, monoid.length)
 
     def __mul__(self, other):
-        return Operator(self.param)
+        b0, c0 = self.param
+        b1, c1 = other.param
+        b, c = b0 * b1, b0 * c1 + c0
+        return Operator((b % self.MOD, c % self.MOD))
 
     def __eq__(self, other):
         return self.param == other.param
-
-
-n, q = map(int, input().split())
-a = LazySegmentTree(n, Monoid(), Operator())
-for _ in range(q):
-    cmd, *query = map(int, input().split())
-    if cmd == 0:
-        s, t, x = query
-        a.range_update(s, t + 1, Operator(x))
-    else:
-        s, t = query
-        print(a.range_merge(s, t + 1).value)
