@@ -41,7 +41,7 @@ class SegmentTree:
 
 class Monoid:
     # example(RSQ)
-    def __init__(self, value, length):
+    def __init__(self, value=0, length=1):
         self.value = value
         self.length = length
 
@@ -53,9 +53,9 @@ class Monoid:
 
 class Operator:
     # example(RAQ)
-    def __init__(self, x):
-        self.x = x
+    def __init__(self, param=0):
+        self.param = param
 
     def __call__(self, monoid):
-        value = self.x * monoid.length + monoid.value
+        value = self.param * monoid.length + monoid.value
         return Monoid(value, monoid.length)
