@@ -68,3 +68,40 @@ class LazySegmentTree:
         for k in self.__covered_index(i, j):
             x = self.fold(x, self.data[k])
         return x
+
+
+MOD = 998244353
+BIT = 30
+MASK = (1 << BIT) - 1
+
+
+def encode(x0, x1):
+    return (x0 << BIT) + x1
+
+
+def decode(x):
+    return x >> BIT, x & MASK
+
+
+def fold(x, y):
+    x0, x1 = decode(x)
+    y0, y1 = decode(y)
+    z0 = (x0 + y0) % MOD
+    z1 = x1 + y1
+    return encode(z0, z1)
+
+
+def compose(f, g):
+    f0, f1 = decode(f)
+    g0, g1 = decode(g)
+    h0 = f0 * g0 % MOD
+    h1 = (f0 * g1 + f1) % MOD
+    return encode(h0, h1)
+
+
+def apply(f, x):
+    f0, f1 = decode(f)
+    x0, x1 = decode(x)
+    y0 = (f0 * x0 + f1 * x1) % MOD
+    y1 = x1
+    return encode(y0, y1)
