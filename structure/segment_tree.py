@@ -5,7 +5,6 @@ class SegmentTree:
         self.fold = fold
         self.apply = apply
         self.data = [self.ide] * (self.size << 1)
-        self.memo = [self.idf] * (self.size << 1)
         self.data[self.size :] = a
         for k in range(1, self.size)[::-1]:
             self.data[k] = self.fold(self.data[k << 1], self.data[k << 1 | 1])
