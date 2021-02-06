@@ -22,6 +22,4 @@ def prime_sieve(n):
         if is_prime[i]:
             for j in range(2 * i, n, i):
                 is_prime[j] = 0
-    for p in range(n):
-        if is_prime[p]:
-            yield p
+    return is_prime
