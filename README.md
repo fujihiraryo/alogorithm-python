@@ -51,7 +51,7 @@
 | [integer/fourier_transform.py](integer/fourier_transform.py) | 剰余環上の高速フーリエ変換 |
 | [integer/lagrange_polynomial.py](integer/lagrange_polynomial.py) | ラグランジュ補間 |
 | [integer/matrix.py](integer/matrix.py) | 行列累乗 |
-| [integer/prime_factorization.py](integer/prime_factorization.py) | 素因数分解 |
+| [integer/prime.py](integer/prime.py) | 素因数分解 |
 
 ## データ構造
 
