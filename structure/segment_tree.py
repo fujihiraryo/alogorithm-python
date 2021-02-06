@@ -1,5 +1,5 @@
 class SegmentTree:
-    def __init__(self, a, ide, idf, fold, apply):
+    def __init__(self, a, ide, fold, apply):
         self.size = len(a)
         self.ide = ide
         self.fold = fold
