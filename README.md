@@ -58,11 +58,11 @@
 
 | コード                                             | 説明         |
 | :------------------------------------------------- | :----------- |
+| [structure/bucket.py](structure/bucket.py) | 平方分割バケット |
 | [structure/fenwick_tree.py](structure/fenwick_tree.py)       | フェニック木 |
 | [structure/lazy_segment_tree.py](structure/lazy_segment_tree.py)       | 遅延セグメント木 |
 | [structure/ordered_set.py](structure/ordered_set.py)       | 順序付き集合 |
 | [structure/priority_quene.py](structure/priority_quene.py)       | 優先度付きキュー |
 | [structure/segment_tree.py](structure/segment_tree.py)       | セグメント木 |
 | [structure/sparse_table.py](structure/sparse_table.py)       | スパーステーブル |
-| [structure/square_root_decomposition.py](structure/square_root_decomposition.py)       | 平方分割 |
 | [structure/union_find.py](structure/union_find.py) | Union Find   |
