@@ -47,6 +47,7 @@
 
 | コード                                       | 説明                     |
 | :------------------------------------------ | :---------------------- |
+| [integer/divisor.py](integer/divisor.py)| 約数 |
 | [integer/extended_euclidean.py](integer/extended_euclidean.py)| 拡張ユークリッドの互除法 |
 | [integer/fourier_transform.py](integer/fourier_transform.py) | 剰余環上の高速フーリエ変換 |
 | [integer/lagrange_polynomial.py](integer/lagrange_polynomial.py) | ラグランジュ補間 |
