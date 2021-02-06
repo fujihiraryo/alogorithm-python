@@ -1,3 +1,10 @@
+def gcd(a, b):
+    x, y = a, b
+    while x:
+        x, y = y % x, x
+    return y
+
+
 def ext_euclid(a, b):
     # 互いに素なa,bに対して、方程式ax+by=1の整数解を1つ求める
     x0, y0, r0 = 1, 0, a
