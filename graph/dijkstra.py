@@ -9,7 +9,9 @@ def dijkstra(graph, start):
     heap = [(0, start)]
     heapq.heapify(heap)
     while heap:
-        _, x = heapq.heappop(heap)
+        d, x = heapq.heappop(heap)
+        if dist[x] < d:
+            continue
         for y in graph[x]:
             if dist[y] > dist[x] + graph[x][y]:
                 dist[y] = dist[x] + graph[x][y]
