@@ -34,11 +34,13 @@ def solve(a, b, m):
 
 def crt(m, r):
     # 各iでx%m[i]=r[i]となるxを求める
-    p = 1
-    x = 0
-    n = len(m)
-    for i in range(n):
-        t = (r[i] - x) * mod_inv(p, m[i]) % m[i]
-        x += t * p
-        p *= m[i]
-    return x
+    m0, r0 = 1, 0
+    for m1, r1 in zip(m, r):
+        _, _, g = ext_euclid(m0, m1)
+        if (r0 - r1) % g:
+            return None
+        x0, _, _ = ext_euclid(m0 // g, m1 // g)
+        r0 = r0 + m0 * (r1 - r0) * x0 // g
+        m0 = m0 * m1 // g
+        r0 %= m0
+    return r0
