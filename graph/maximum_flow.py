@@ -2,7 +2,10 @@ class Dinic:
     def __init__(self, graph, start, goal, INF=1 << 30):
         n = len(graph)
         self.size = n
-        self.graph = graph
+        self.graph = [{} for _ in range(n)]
+        for x in range(n):
+            for y in graph[x]:
+                self.graph[x][y] = graph[x][y]
         self.start = start
         self.goal = goal
         self.INF = INF
