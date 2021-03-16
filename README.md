@@ -32,6 +32,7 @@
 | :--------------------------- | :----------- |
 | [graph/articulation_points.py](graph/articulation_points.py) | 関節点  |
 | [graph/bellman_ford.py](graph/bellman_ford.py) | ベルマンフォード法  |
+| [graph/bipartite_matching.py](graph/bipartite_matching.py) | 二部グラフマッチング  |
 | [graph/breadth_first_search.py](graph/breadth_first_search.py) | 幅優先探索   |
 | [graph/bridges.py](graph/bridges.py) | 橋  |
 | [graph/depth_first_search.py](graph/depth_first_search.py) | 深さ優先探索 |
