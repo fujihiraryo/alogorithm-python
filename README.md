@@ -1,6 +1,4 @@
-# python-kyopro-library
-
-競プロ用 Python ライブラリ
+# 競プロ用 Python ライブラリ
 
 ## 配列
 
