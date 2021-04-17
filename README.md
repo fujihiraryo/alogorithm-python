@@ -48,6 +48,7 @@
 
 | コード                                       | 説明                     |
 | :------------------------------------------ | :---------------------- |
+| [integer/combination.py](integer/combination.py)| 二項係数 |
 | [integer/divisor.py](integer/divisor.py)| 約数 |
 | [integer/extended_euclidean.py](integer/extended_euclidean.py)| 拡張ユークリッドの互除法 |
 | [integer/fourier_transform.py](integer/fourier_transform.py) | 剰余環上の高速フーリエ変換 |
