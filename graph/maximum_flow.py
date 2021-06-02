@@ -8,7 +8,7 @@ def max_flow(graph, s, t):
             adj[x].append(y)
             adj[y].append(x)
             cap[x][y] = graph[x][y]
-    res = 0
+    tot = 0
     while True:
         # bfs
         level = [INF] * n
@@ -59,5 +59,10 @@ def max_flow(graph, s, t):
                 cap[x][y] -= f
                 cap[y][x] += f
                 y = x
-            res += f
-    return res
+            tot += f
+    flow = [{} for _ in range(n)]
+    for x in range(n):
+        for y in graph[x]:
+            if cap[y][x]:
+                flow[x][y] = cap[y][x]
+    return flow, tot
